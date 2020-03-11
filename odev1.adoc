@@ -1,0 +1,180 @@
+= Yazılım Tasarım Kalıpları
+
+=== Linux
+
+.Linux'un Kullanım Amaçları
+* Kişisel Kullanım
+* Internet Sunucusu
+** WWW sunucu
+** DNS sunucu
+** SMTP sunucu
+** FTP sunucu
+* Ağ Elemanı
+
+=== Linux'un Avantajları ve Dezavantajları
+
+
+
+.Avantajları
+. UNIX işletim sistemine sahip bir bilgisayar kullanmak istiyorsanız ve bu işletim sisteminde platforma bağımlı bir yazılım kullanmıyorsanız, Linux ideal bir çözümdür.
+
+. Linux ücretsizdir. Sadece işletim sisteminin maliyeti açısından değil, verdiği performans için ihtiyaç duyduğu donanım açısından da çok ucuzdur.
+.. Üstüne üstlük çok kullanılan ve bol yedek parçası bulunan bir platform altında çalıştığı için belirli bir Linux sisteminin performansını artırmak için yapılması gereken yatırım başka bir UNIX iş istasyonunu aynı oranda geliştirmek için gereken yatırıma göre çok düşüktür.
+.. Herhangi bir Sun bilgisayarın hafizasını iki katına çıkarmak için harcanacak para ile bir Linux-PC'nin hafizasını iki katına çıkarmak için harcanması gereken parayı kıyaslamayı deneyin. Fakat şirketler bazında Linux'un bedava bir işletim sistemi olması genelde gözardı edilir.
+
+. Linux hızla geliştirilmektedir. Bu gelişimin en büyük yararı, eksikliklerin kullanıcıların talepleri ve çabaları sonucunda hızla giderilmesidir. Linux diğer tüm işletim sistemlerine göre belirli bir donanım için daha hızlı destek verebilmektedir.
+
+. Linux çok değişik donanımlar ve servisler icin özel olarak hazırlanır. İşletim sisteminin temelini oluşturan çekirdek kullanıcı tarafından da derlenebildiği için, bu derleme sırasında sadece kullanım amacına yönelik alt programlarla donatılır.
+.. Bu genel olarak sistemin performansını artırmaktadır. (Örnek olarak SCSI donanımınız yoksa çekirdeğinizde SCSI ile ilgili alt programlara yer vermezsiniz)
+
+.Dezavantajları
+. Linux'un serbestçe dağıtılıyor olması bir çok kişinin bu işletim sistemine güvenmemesine yol açmıştır.
+
+. Linux'un sürekli gelişiyor olması en büyük dezavantajlarından biridir. Henüz tüm ihtiyaçlara cevap vermemesi, gelişimin bazı aşamalarında topyekün değişiklikler yapılması, gelişimi takip etmek için bazen sürekli yenileme yapılması, birçok kullanıcının bu işletim sistemine güvenmemesine yol açmıştır.
+
+. Linux herhangi bir ticari destek altında gelişmemektedir. Bunun en büyük yararı işletim sisteminin ticari kaygılar taşımamasıdır. Ancak bunun yanısıra diğer işletim sistemlerinde olan teknik destek, dağıtım ve dökümantasyon alanlarında eksikleri vardır. Özellikle teknik destek eksikliği, anahtar teslim çözümlere alışmış kullanıcıların çokluğu Linux kullanıcılarının sayısını sınırlayan temel faktörler olmuşlardır.
+
+http://web.deu.edu.tr/doc/lis/lis-1.html[Kaynak]
+
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+== [underline]#Uyarı blokları#
+
+.Linux İsmi
+[NOTE]
+====
+Linux ismi ilk geliştiricisi olan Linus Torvalds tarafından 1991 yılında verilmiştir.
+====
+
+.Linux Hakkında
+[IMPORTANT]
+====
+Linux; bilgisayar işletim sistemlerinin en temel parçası olan çekirdek yazılımlarından bir tanesidir. GNU Genel Kamu Lisansı ile sunulan ve Linux Vakfı çatısı altında geliştirilen bir özgür yazılım projesidir.
+====
+
+.Linux
+[WARNING]
+====
+Linux, C ve Assembly dilleri kullanılarak yazılmıştır.
+====
+
+== Link Örnekleri
+
+.External
+https://github.com/Ulashe[Ulaş Öztürk @ *Github*]
+
+.With spaces and special characters
+link:https://www.google.com/search?q=linux+nedir%3F[Linux nedir?]
+
+[[anchor-1]]
+Paragraf no 1 - This is an anchor
+
+.Relative
+link:index.html[Docs]
+
+.Link with attributes
+https://github.com/Ulashe/design-patterns[Ulaş Öztürk,role=external,window=_blank]
+
+Bu paragraflar sayfa aşağıya inecek kadar uzun olması için yazılıyor. Böylece anchor'lar daha iyi anlaşılacak.
+
+Anchor'lar bu paragrafların sonunda yer alıyor.
+
+[[paragraf]] Burada bir anchor mevcut.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum neque finibus lobortis porttitor. In ultricies lorem a gravida mattis. Donec sed enim dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas efficitur mauris id metus vehicula, ut interdum sem luctus. Nam malesuada iaculis sollicitudin. Cras ac libero nec ante blandit porta non id enim. Sed dolor arcu, sodales quis accumsan ac, condimentum nec erat. Vivamus euismod imperdiet dolor, et luctus velit blandit nec.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum neque finibus lobortis porttitor. In ultricies lorem a gravida mattis. Donec sed enim dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas efficitur mauris id metus vehicula, ut interdum sem luctus. Nam malesuada iaculis sollicitudin. Cras ac libero nec ante blandit porta non id enim. Sed dolor arcu, sodales quis accumsan ac, condimentum nec erat. Vivamus euismod imperdiet dolor, et luctus velit blandit nec.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum neque finibus lobortis porttitor. In ultricies lorem a gravida mattis. Donec sed enim dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas efficitur mauris id metus vehicula, ut interdum sem luctus. Nam malesuada iaculis sollicitudin. Cras ac libero nec ante blandit porta non id enim. Sed dolor arcu, sodales quis accumsan ac, condimentum nec erat. Vivamus euismod imperdiet dolor, et luctus velit blandit nec.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum neque finibus lobortis porttitor. In ultricies lorem a gravida mattis. Donec sed enim dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas efficitur mauris id metus vehicula, ut interdum sem luctus. Nam malesuada iaculis sollicitudin. Cras ac libero nec ante blandit porta non id enim. Sed dolor arcu, sodales quis accumsan ac, condimentum nec erat. Vivamus euismod imperdiet dolor, et luctus velit blandit nec.
+
+
+.Inline anchors
+<<anchor-1,Paragraf no 1'e git>>
+
+.Internal cross references
+Paragraf no 1'e git <<paragraf>>
+
+
+== Images
+
+Block image
+
+:imagesdir: images
+
+image::computer1.jpg[GitHub mascot]
+
+Inline image
+
+This is an icon image:computer2.png[Mascot]
+
+Inline image with positioning role
+
+This icon floated left image:computer3.png[Mascot,100,100,role="left"]
+
+<<<
+<<<
+
+== Video
+
+video::https://github.com/Ulashe/design-patterns/blob/master/mov_bbb.mp4[]
+
+video::images/mov_bbb.mp4[]
+
+
+==== Bu youtube videosu
+
+
+video::rPQoq7ThGAU[youtube]
+
+
+== Code block with title and syntax highlighting
+
+[source, cpp]
+----
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    cout << "Hello, World!";
+    return 0;
+}
+----
+
+Inline source 
+
+This is an `inline` code. `+{This is to}+`
+
+== Source Code
+
+[source, shell]
+----
+#!/bin/bash
+Recipient=”admin@example.com”
+Subject=”Greeting”
+Message=”Welcome to our site”
+`mail -s $Subject $Recipient <<< $Message`
+----
+
+== Tablo
+
+
+.Example Table
+[options="header"]
+|====================
+|Tarih | Adet 
+|Bugün  | 6
+|Yarın  | 3
+|====================
+
+== Cross Reference Link
+
+Tüm image özellikleri için <<odev1.4.doc#paragraf, buraya tıkla>> .
