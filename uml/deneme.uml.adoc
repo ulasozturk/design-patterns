@@ -1,0 +1,24 @@
+
+[plantuml,use-cases,png]
+....
+@startuml
+:Main Admin: as Admin
+(Use the application) as (Use)
+
+User <|-- Admin
+(Start) <|-- (Use)
+
+@enduml
+.... 
+
+[plantuml,diagram-classes,png]
+....
+@startuml
+Object <|-- ArrayList
+
+Object : equals()
+ArrayList : Object[] elementData
+ArrayList : size()
+
+@enduml
+....
