@@ -1,0 +1,62 @@
+[uml,file="relationTypes.png"]
+--
+@startuml
+left to right direction
+
+Class Yolcu{
+    +yas : integer
+    +biletOkut()
+}
+Class Ogrenci
+Class Yasli
+Class Yetiskin
+enum IndirimOrani{
+    Yasli
+    Ogrenci
+    Gazi
+}
+Class Tasit{
+    +koltukSayisi : string
+    +biletFiyati : integer
+    +IndirimMiktariHesapla()
+}
+Class Taksi
+Class Otobus
+Class Tramvay
+Class Kapi
+Class Ayna
+Class Radyo
+Class Bilet
+Class Bilet_Makinesi
+
+Ogrenci ..|> Yolcu
+Yasli ..|> Yolcu
+Yetiskin ..|> Yolcu
+
+Taksi --|> Tasit
+Otobus --|> Tasit
+Tramvav --|> Tasit
+
+Kapi "3" --* "1" Taksi
+Kapi "2" --* "1" Otobus
+Kapi "many" --* "1" Tramvay 
+
+Bilet_Makinesi "1" --* Taksi
+Bilet_Makinesi "1" --* Otobus
+Bilet_Makinesi "1" --* Tramvay
+
+Ayna "3" --o Taksi
+Ayna "3.. 6" --o Otobus
+Ayna "3.. 6" --o Tramvay
+
+Radyo "1" --o Taksi
+Radyo "1" --o Otobus
+Radyo "1" --o Tramvay
+
+Yolcu ..> Tasit : <<use>>
+Bilet --> Yolcu : sahiptir
+IndirimOrani -- Tasit
+
+
+@enduml
+--
