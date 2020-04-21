@@ -1,0 +1,90 @@
+[plantuml, diagram-classes, png]
+--
+@startuml
+
+interface ComputerPlan{
+    + setRam(): void
+    + setHdd(): void 
+    + setSsd(): void
+    + setCpuBrand(): void
+    + setGpuBrand(): void
+    + setScreenSize(): void
+}
+class Computer{
+    - ram: int
+    - hdd: int
+    - ssd: int
+    - cpuBrand: String
+    - gpuBrand: String
+    - screenSize: int
+    + setRam(int): void
+    + setHdd(int): void
+    + setSsd(int): void
+    + setCpuBrand(String): void
+    + setGpuBrand(String): void
+    + setScreenSize(int): void
+}
+Computer --|> ComputerPlan
+
+interface ComputerBuilder{
+    + buildRam(): void
+    + buildHdd(): void
+    + buildSsd(): void
+    + buildCpuBrand(): void
+    + buildGpuBrand(): void
+    + buildScreenSize(): void
+    + getComputer(): Computer
+}
+class HighEndComputerBuilder{
+    - computer: Computer
+    + <<constructor>> HighEndComputerBuilder()
+    + buildRam(): void
+    + buildHdd(): void
+    + buildSsd(): void
+    + buildCpuBrand(): void
+    + buildGpuBrand(): void
+    + buildScreenSize(): void
+    + getComputer(): Computer
+}
+HighEndComputerBuilder --|> ComputerBuilder
+HighEndComputerBuilder ..> Computer : <<creates>>
+class MiddleEndComputerBuilder{
+    - computer: Computer
+    + <<constructor>> MiddleEndComputerBuilder()
+    + buildRam(): void
+    + buildHdd(): void
+    + buildSsd(): void
+    + buildCpuBrand(): void
+    + buildGpuBrand(): void
+    + buildScreenSize(): void
+    + getComputer(): Computer
+}
+MiddleEndComputerBuilder --|> ComputerBuilder
+MiddleEndComputerBuilder ..> Computer : <<creates>>
+
+class LowEndComputerBuilder{
+    - computer: Computer
+    + <<constructor>> LowEndComputerBuilder()
+    + buildRam(): void
+    + buildHdd(): void
+    + buildSsd(): void
+    + buildCpuBrand(): void
+    + buildGpuBrand(): void
+    + buildScreenSize(): void
+    + getComputer(): Computer
+}
+LowEndComputerBuilder --|> ComputerBuilder
+LowEndComputerBuilder ..> Computer : <<creates>>
+
+class ComputerDirector{
+    - computerBuilder: ComputerBuilder
+    + <<constructor>> ComputerDirector(ComputerBuilder)
+    + makeComputer(): void
+    + getComputer(): Computer
+    + changeBuilder(ComputerBuilder): void
+    + changeBuilderAndRemake(ComputerBuilder): void
+}
+ComputerDirector o--> ComputerBuilder
+
+@enduml
+--
