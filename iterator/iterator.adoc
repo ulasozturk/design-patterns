@@ -1,0 +1,61 @@
+[plantuml, iterator-uml-class-diagram, png]
+--
+@startuml
+
+interface Iterator{
+    + hasNext(): boolean
+    + next(): Object
+}
+
+interface Collection{
+    + createIterator(): Iterator
+}
+
+class Order{
+    - {static} nextOrderID: int
+    - orderID: int
+    - orderItem: String
+    - orderPrice: int
+    - orderQuantity: int
+    - paymentMethod: String
+    + <<constructor>> Order(String,int,int,String)
+    + getOrderID(): int
+    + getOrderItem(): String
+    + getOrderPrice(): int
+    + getOrderQuantity(): int
+    + getPaymentMethod(): String
+}
+
+class OrderCollection{
+    + orders: ArrayList<Order>
+    + <<constructor>> OrderCollection()
+    + addOrder(Order): void
+    + deleteOrder(int): void
+    + createIterator(): Iterator
+}
+
+OrderCollection ..|> Collection
+OrderCollection "<<uses>>" ..> OrderIterator
+OrderCollection "<<uses>>" ..> Order
+
+class OrderIterator{
+    + orders: ArrayList<Order>
+    + index: int
+    + <<constructor>> OrderIterator(ArrayList<Order>)
+    + hasNext(): boolean
+    + next(): Object
+}
+
+OrderIterator ..|> Iterator
+OrderIterator "<<uses>>" ..> Order
+
+class IteratorPatternDemo{
+    + {static} main: void
+    + orderCollection: OrderCollection
+    + iter: Iterator
+}
+
+IteratorPatternDemo "<<uses>>" ..> OrderCollection
+
+@enduml
+--

@@ -1,0 +1,74 @@
+[plantuml, observer-uml-class-diagram, png]
+--
+@startuml
+
+interface Subject{
+    + register(Observer): void
+    + unregister(Observer): void
+    + notifyObservers(): void
+}
+interface Observer{
+    + update(double,double,double): void
+}
+class ConcreteSubject{
+    - dollar: double
+    - euro: double
+    - sterlin: double
+    - MUTEX: Object
+    - observers: ArrayList<Observer>
+    + <<constructor>> ConcreteSubject(double,double,double)
+    + register(Observer): void
+    + unregistre(Observer): void
+    + notifyObservers(): void
+    + setValues(double,double,double): void
+    + showObservers(): void
+    + showValues(): void
+}
+ConcreteSubject ..|> Subject
+ConcreteSubject "<<uses>>" ..> Observer
+
+class ConcreteObserver{
+    - dollar: double
+    - euro: double
+    - sterlin: double
+    - {static} observerIDCount: int
+    - observerID: int
+    - observerName: String
+    + <<constructor>> ConcreteObserver(String,Subject)
+    + update(double,double,double): void
+    + printValues(): void
+}
+ConcreteObserver ..|> Observer
+ConcreteObserver "<<uses>>" ..> Subject
+
+class UpdateValuesContinously{
+    - dollar: double
+    - euro: double
+    - sterlin: double
+    - interval: int
+    - subject: Subject
+    + <<constructor>> UpdateValuesContinously(Subject, double,double,double, int)
+    + run(): void
+}
+UpdateValuesContinously ..|> Runnable
+UpdateValuesContinously "<<uses>>" ..> Subject
+
+interface Runnable{
+    + run(): void
+}
+
+class ObserverPatternDemo{
+    + {static} main: void
+    + subject: ConcreteSubject
+    + update: UpdateValuesContinously
+    + thread: Thread
+    + observer1: ConcreteObserver
+    + observer2: ConcreteObserver
+    + observer3: ConcreteObserver
+}
+ObserverPatternDemo "<<uses>>" ..> ConcreteSubject
+ObserverPatternDemo "<<uses>>" ..> ConcreteObserver
+ObserverPatternDemo "<<uses>>" ..> UpdateValuesContinously
+
+@enduml
+--
