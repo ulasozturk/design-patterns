@@ -1,6 +1,6 @@
-package ThreadSafeObserverPattern;
+package ObserverPattern;
 
-public class ThreadSafeObserverPattern {
+public class OberserverPatternDemo {
 
     public static void main(String[] args) {
         ConcreteSubject subject = new ConcreteSubject(7,7.5,8);
@@ -22,7 +22,12 @@ public class ThreadSafeObserverPattern {
             }
         
         ConcreteObserver observer3 = new ConcreteObserver("Foreks.com", subject);
-        
+        try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
+        subject.unregister(observer2);        
     }
     
 }

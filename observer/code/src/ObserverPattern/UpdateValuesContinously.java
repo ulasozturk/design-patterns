@@ -1,4 +1,4 @@
-package ThreadSafeObserverPattern;
+package ObserverPattern;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -23,14 +23,14 @@ public class UpdateValuesContinously implements Runnable {
     public void run() {
         for (int i = 0; i <= 20; i++) {
 
-            DecimalFormat df = new DecimalFormat("#.##");
+            DecimalFormat df = new DecimalFormat("#.####");
             DecimalFormatSymbols dfs = new DecimalFormatSymbols();
             dfs.setDecimalSeparator('.');
             df.setDecimalFormatSymbols(dfs);
 
             double rn1 = (Math.random() * (0.05)) - 0.025;
-            double rn2 = (Math.random() * (0.06)) - 0.030;
-            double rn3 = (Math.random() * (0.07)) - 0.035;
+            double rn2 = (Math.random() * (0.08)) - 0.04;
+            double rn3 = (Math.random() * (0.12)) - 0.06;
 
             dollar = Double.valueOf(df.format((dollar + rn1)));
             euro = Double.valueOf(df.format((euro + rn1)));

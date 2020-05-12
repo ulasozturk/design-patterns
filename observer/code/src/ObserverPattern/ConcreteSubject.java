@@ -1,4 +1,4 @@
-package ThreadSafeObserverPattern;
+package ObserverPattern;
 
 import java.util.ArrayList;
 
@@ -47,7 +47,7 @@ public class ConcreteSubject implements Subject {
     }
 
     @Override
-    public void notifyObserver() {
+    public void notifyObservers() {
         ArrayList<Observer> observersCopy;
 
         synchronized (MUTEX) {
@@ -73,7 +73,7 @@ public class ConcreteSubject implements Subject {
         showValues();
         showObservers();
         System.out.println("---------");
-        notifyObserver();
+        notifyObservers();
 
     }
 

@@ -1,4 +1,4 @@
-package ThreadSafeObserverPattern;
+package ObserverPattern;
 
 public class ConcreteObserver implements Observer {
 
@@ -15,12 +15,6 @@ public class ConcreteObserver implements Observer {
         this.observerID = observerIDCount++;
         this.observerName = observerName;
         subject.register(this);
-    }
-
-    public ConcreteObserver(String observerName) {
-        this.observerID = ++observerIDCount;
-        this.observerName = observerName;
-
     }
 
     @Override
