@@ -122,17 +122,6 @@ This icon floated left image:computer3.png[Mascot,100,100,role="left"]
 <<<
 <<<
 
-== Video
-
-video::https://github.com/Ulashe/design-patterns/blob/master/mov_bbb.mp4[]
-
-video::images/mov_bbb.mp4[]
-
-
-Bu youtube videosu
-
-
-video::rPQoq7ThGAU[youtube]
 
 
 == Code block with title and syntax highlighting
